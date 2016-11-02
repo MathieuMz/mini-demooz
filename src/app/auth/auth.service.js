@@ -1,43 +1,40 @@
 export default class AuthService {
   constructor() {
-    this.currentUser = null;
+    this.currentUser = "Bob";
+    this.users = require('../json/users.json');
   }
 
   getConnectedUser() {
-    return localStorage.getItem('connectedUser');
+    return this.currentUser;
   }
 
   logIn(userName) {
     if (this.userExists(userName)) {
-      localStorage.setItem('connectedUser', userName);
-      return userName;
+      this.currentUser = userName;
+      return this.currentUser;
     }
     return false;
   }
 
   logOut() {
-    localStorage.removeItem('connectedUser');
+    this.currentUser = null;
   }
 
   registerUser(userData) {
     if (!this.userExists(userData.username)) {
-      let users = JSON.parse(localStorage.getItem('users'));
-      users.push(userData);
-      localStorage.setItem('users', JSON.stringify(users));
+      this.users.push(userData);
       return userData.username;
     }
     return false;
   }
 
   userExists(userName) {
-    let users = JSON.parse(localStorage.getItem('users'))
-    var userExists = users.filter((user) => user.username === userName);
+    var userExists = this.users.filter((user) => user.username === userName);
     return (userExists.length === 1);
   }
 
   getUserInfos(userName) {
-    let users = JSON.parse(localStorage.getItem('users'))
-    let userInfos = users.filter((user) => user.username === userName);
+    let userInfos = this.users.filter((user) => user.username === userName);
     return userInfos[0];
   }
 

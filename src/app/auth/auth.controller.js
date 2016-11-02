@@ -1,10 +1,9 @@
 export default class AuthController {
-	constructor($state, $window, AuthService) {
+	constructor($state, AuthService) {
 		this.$state = $state
 		this.authService = AuthService;
-		this.$window = $window;
 		this.errorRegister = this.errorLogin = null;
-    this.$inject = ['$state', '$window', 'AuthService'];
+    this.$inject = ['$state', 'AuthService'];
   }
 
 	submitRegister () {

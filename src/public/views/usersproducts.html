@@ -1,0 +1,19 @@
+<div class="{{mode}} col-lg-6">
+  <ul class="list-group">
+    <li class="list-group-item">
+      {{usersproducts.title}}<span class="badge" ng-bind="usersproducts.users.length"></span>
+    </li>
+    <li class="list-group-item" ng-repeat="user in usersproducts.users">
+      <span ng-bind="user.username"></span>
+      <span ng-show="authService.getConnectedUser()"
+        ng-bind-template="de {{authService.getUserProp(user.username, 'city')}}
+        (tel: {{authService.getUserProp(user.username, 'phone')}})"></span>
+    </li>
+  </ul>
+  <button
+    ng-disabled="usersproducts.alreadyOwnerOrRequester()"
+    ng-click="usersproducts.addUserToProduct()"
+    ng-show="authService.getConnectedUser()"
+    class="btn btn-default col-lg-12" role="button">{{usersproducts.button}}
+  </button>
+</div>

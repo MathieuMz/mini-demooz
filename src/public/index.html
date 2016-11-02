@@ -19,7 +19,7 @@
           <li><a ui-sref="products">Products</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right" >
-          <li ng-show="authService.getConnectedUser()"><a>Hello {{authService.getConnectedUser()}}</a></li>
+          <li ng-show="authService.getConnectedUser()"><span>Hello {{authService.getConnectedUser()}}</span></li>
           <li ng-show="authService.getConnectedUser()"><a href='#' ng-click="authService.logOut()">Partir loin de ce monde</a></li>
           <li ng-show="!authService.getConnectedUser()"><a ui-sref="register">Rejoindre MiniDemooz</a></li>
           <li ng-show="!authService.getConnectedUser()"><a ui-sref="login">Se connecter</a></li>

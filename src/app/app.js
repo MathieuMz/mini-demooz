@@ -18,11 +18,5 @@ App.config(function($urlRouterProvider, $locationProvider) {
   $urlRouterProvider.otherwise('/products');
 });
 App.run(assignServicesToRootScope);
-App.run(function() {
-  let jsonData = ['ownerships', 'products', 'users', 'testRequests'];
-  jsonData.forEach(function(item) {
-    let data = require('./json/' + item + '.json');
-    localStorage.setItem(item, JSON.stringify(data));
-  });
-})
+
 export default App.name;

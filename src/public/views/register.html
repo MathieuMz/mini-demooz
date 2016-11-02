@@ -11,21 +11,21 @@
         <form ng-submit="$ctrl.submitRegister()">
           <fieldset>
 
-            <div class="input-group">
+            <div class="input-group input-group-lg">
               <span class="input-group-addon glyphicon glyphicon-user" id="register-username"></span>
               <input type="text" class="form-control"
               placeholder="Nom d'utilisateur" aria-describedby="register-username"
               ng-model="$ctrl.formData.username">
             </div>
 
-            <div class="input-group">
+            <div class="input-group input-group-lg">
               <span class="input-group-addon glyphicon glyphicon-globe" id="register-city"></span>
               <input type="text" class="form-control"
               placeholder="Ville" aria-describedby="register-city"
               ng-model="$ctrl.formData.city">
             </div>
 
-            <div class="input-group">
+            <div class="input-group input-group-lg">
               <span class="input-group-addon glyphicon glyphicon-earphone" id="register-phone"></span>
               <input type="tel" pattern="[0-9]{10}" class="form-control"
               placeholder="Téléphone" aria-describedby="register-phone"
@@ -34,7 +34,7 @@
 
             <div class="alert alert-danger" ng-show="$ctrl.errorRegister" ng-bind="$ctrl.errorRegister"></div>
 
-            <button class="btn btn-lg btn-primary pull-xs-right"
+            <button class="btn btn-lg pull-xs-right btn btn-success"
               type="submit">Register
             </button>
 

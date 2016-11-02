@@ -1,12 +1,16 @@
 import uirouter from 'angular-ui-router';
-import ProductsService from './products.service';
 import ProductsController from './products.controller';
+
+import UsersProductsService from '../users-products/usersproducts.service';
+import usersProducts from '../users-products/usersproducts.directive';
+
 import AuthService from '../auth/auth.service';
 
 export default angular.module('app.products', [uirouter])
-	.service('ProductsService', ProductsService)
+	.service('UsersProductsService', UsersProductsService)
 	.service('AuthService', AuthService)
 	.controller('ProductsController', ProductsController)
+	.directive('usersProducts', () => new usersProducts)
 	.config(function($stateProvider) {
 	  $stateProvider.state('products', {
       url: '/products',
