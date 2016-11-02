@@ -1,0 +1,34 @@
+[
+	{
+		"username": "Ludo",
+		"productName": "Tesla Model X"
+	},
+	{
+		"username": "Ludo",
+		"productName": "Playstation 4"
+	},
+	{
+		"username": "Bob",
+		"productName": "IPhone 7"
+	},
+	{
+		"username": "Bob",
+		"productName": "Playstation 4"
+	},
+	{
+		"username": "Marie",
+		"productName": "IPhone 7"
+	},
+	{
+		"username": "Marie",
+		"productName": "Magimix Cook Expert"
+	},
+	{
+		"username": "Kevin",
+		"productName": "IPhone 7 plus"
+	},
+	{
+		"username": "Kevin",
+		"productName": "Playstation 4"
+	}
+]

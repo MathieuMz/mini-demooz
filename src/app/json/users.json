@@ -1,0 +1,22 @@
+[
+	{
+		"username": "Ludo",
+		"phone": "0616490302",
+		"city": "Toulouse"
+	},
+	{
+		"username": "Bob",
+		"phone": "0612345678",
+		"city": "Paris"
+	},
+	{
+		"username": "Marie",
+		"phone": "0687654321",
+		"city": "Bordeaux"
+	},
+	{
+		"username": "Kevin",
+		"phone": "0612312312",
+		"city": "Bayonne"
+	}
+]

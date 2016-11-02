@@ -1,0 +1,34 @@
+<!doctype html>
+<html ng-app="app" lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>MiniDemooz</title>
+  <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <base href="/">
+</head>
+<body>
+  <div class="header">
+    <div class="app-title">
+      MiniDemooz
+    </div>
+    <nav class="navbar navbar-default">
+      <div class="collapse in navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li><a ui-sref="products">Products</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right" >
+          <li ng-show="authService.getConnectedUser()"><a>Hello {{authService.getConnectedUser()}}</a></li>
+          <li ng-show="authService.getConnectedUser()"><a href='#' ng-click="authService.logOut()">Partir loin de ce monde</a></li>
+          <li ng-show="!authService.getConnectedUser()"><a ui-sref="register">Rejoindre MiniDemooz</a></li>
+          <li ng-show="!authService.getConnectedUser()"><a ui-sref="login">Se connecter</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+  <div class="content">
+    <ui-view></ui-view>
+  </div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<div class="login-page">
+  <div class="container page">
+    <div class="row">
+      <div class="col-md-6 offset-md-3 col-xs-12">
+        <p class="text-xs-center">
+          <a ui-sref="register">
+            Besoin de s'inscrire ?
+          </a>
+        </p>
+
+        <form ng-submit="$ctrl.submitLogin()">
+          <fieldset>
+
+            <div class="input-group">
+              <span class="input-group-addon glyphicon glyphicon-user" id="register-username"></span>
+              <input type="text" class="form-control"
+              placeholder="Nom d'utilisateur" aria-describedby="register-username"
+              ng-model="$ctrl.formData.username">
+            </div>
+
+            <div class="alert alert-danger" ng-show="$ctrl.errorLogin" ng-bind="$ctrl.errorLogin"></div>
+
+            <button class="btn btn-lg btn-primary pull-xs-right"
+              type="submit">Me connecter !
+            </button>
+
+          </fieldset>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>

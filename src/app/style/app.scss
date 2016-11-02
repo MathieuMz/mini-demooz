@@ -1,0 +1,65 @@
+/* styles in src/style directory are applied to the whole page */
+body {
+  background: #DDD;
+  color: #fff;
+  font-family: Century Gothic, sans-serif;
+}
+
+.app-title {
+  width: 100%;
+  background-color: #000;
+  color: #FFF;
+  font-size: 3em;
+  text-align: center;
+}
+.header > .navbar {
+  background-color: #000;
+  .navbar-nav > li > a {
+    color: #FFF;
+  }
+}
+
+.content {
+  width: 800px;
+  margin: auto;
+}
+
+.products-container {
+  h2 {
+    text-align: center;
+  }
+  li.list-group-item:first-child {
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  .owners{
+    $owners-color: #393;
+    li {
+      color: $owners-color;
+      .badge {
+        background-color: $owners-color;
+      }
+    }
+    button {
+      background-color: $owners-color;
+      color: #FFF;
+    }
+  }
+  .requesters {
+    $requesters-color: #339;
+    li {
+      color: $requesters-color;
+      .badge {
+        background-color: $requesters-color;
+      }
+    }
+    button {
+      background-color: $requesters-color;
+      color: #FFF;
+    }
+  }
+  button {
+    margin: auto;
+  }
+}

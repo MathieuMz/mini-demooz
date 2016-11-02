@@ -1,0 +1,43 @@
+<div class="products-container" id="top">
+    <div class="products row">
+      <div ng-repeat="product in products.productList" >
+        <div class="thumbnail">
+          <div class="caption clearfix">
+            <h2 ng-bind="product.name"></h2>
+            <div class="owners col-lg-6">
+              <ul class="list-group">
+                <li class="list-group-item">
+                  Ils l'ont <span class="badge" ng-bind="product.owners.length"></span>
+                </li>
+                <li class="list-group-item" ng-repeat="owner in product.owners">
+                  <span ng-bind="owner.username"></span>
+                  <span ng-show="authService.getConnectedUser()"
+                    ng-bind-template="de {{authService.getUserProp(owner.username, 'city')}}
+                    (tel: {{authService.getUserProp(owner.username, 'phone')}})"></span>
+                </li>
+              </ul>
+              <button ng-click="products.haveProduct(product)"
+              ng-disabled="products.alreadyOwnerOrRequester(product)"
+              ng-show="authService.getConnectedUser()"
+              class="btn btn-default" role="button">Je l'ai !</button>
+            </div>
+            <div class="requesters col-lg-6">
+              <ul class="list-group">
+                <li class="list-group-item">
+                  Ils le veulent <span class="badge" ng-bind="product.requesters.length"></span>
+                </li>
+                <li class="list-group-item" ng-repeat="requester in product.requesters">
+                  <span ng-bind="requester.username"></span>
+                </li>
+              </ul>
+              <button ng-click="products.requestProduct(product)"
+              ng-disabled="products.alreadyOwnerOrRequester(product)"
+              ng-show="authService.getConnectedUser()"
+              class="btn btn-default" role="button">Je veux le tester !</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+</div>
