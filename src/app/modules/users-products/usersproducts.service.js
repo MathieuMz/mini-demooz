@@ -1,7 +1,9 @@
+import * as Constants from '../../constants'
+
 export default class UsersProductsService {
   constructor() {
-    this.ownerships = require('../json/ownerships.json');
-    this.requesters = require('../json/testRequests.json');
+    this.ownerships = require('../../data/ownerships.json');
+    this.requesters = require('../../data/testRequests.json');
   }
 
   initProducts(productList) {
@@ -25,8 +27,8 @@ export default class UsersProductsService {
   }
 
   userAlreadyInProduct(product, user) {
-    let owners = this.getUsersOfProduct("ownerships", product);
-    let requesters = this.getUsersOfProduct("requesters", product);
+    let owners = this.getUsersOfProduct(Constants.OWNERSHIPS_MODE, product);
+    let requesters = this.getUsersOfProduct(Constants.REQUESTERS_MODE, product);
     return ((
       requesters.filter(requester =>
         requester.username === user

@@ -1,5 +1,5 @@
 export default class ProductsController {
 	constructor() {
-    this.productList = require('../json/products.json');
+    this.productList = require('../../data/products.json');
   }
 }

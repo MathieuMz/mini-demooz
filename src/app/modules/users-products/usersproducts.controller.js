@@ -1,3 +1,5 @@
+import * as Constants from '../../constants'
+
 export default class UsersProductsController {
 	constructor($scope, $state, UsersProductsService, AuthService) {
 		this.$scope = $scope;
@@ -8,8 +10,8 @@ export default class UsersProductsController {
 		this.product = this.$scope.product.name;
 		this.mode = this.$scope.mode;
 		this.users = this.usersproductsService.getUsersOfProduct(this.mode, this.product);
-		this.title = (this.mode === 'ownerships') ? "Ils l'ont !" : "Ils sont intéressés !";
-		this.button = (this.mode === 'ownerships') ? "Moi aussi je l'ai" : "Moi aussi je suis intéressé";
+		this.title = (this.mode === Constants.OWNERSHIPS_MODE) ? "Ils l'ont !" : "Ils sont intéressés !";
+		this.button = (this.mode === Constants.OWNERSHIPS_MODE) ? "Moi aussi je l'ai" : "Moi aussi je suis intéressé";
 
     this.$inject = ['$scope', '$state', 'UsersProductsService', 'AuthService'];
   }

@@ -1,7 +1,7 @@
 export default class AuthService {
   constructor() {
     this.currentUser = null;
-    this.users = require('../json/users.json');
+    this.users = require('../../data/users.json');
   }
 
   getConnectedUser() {

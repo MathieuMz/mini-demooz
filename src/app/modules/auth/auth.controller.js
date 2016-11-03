@@ -1,3 +1,5 @@
+import * as Constants from '../../constants'
+
 export default class AuthController {
 	constructor($state, AuthService) {
 		this.$state = $state
@@ -10,7 +12,7 @@ export default class AuthController {
 		let userRegister = this.authService.registerUser(this.formData);
 		if (userRegister) {
 			if (this.authService.logIn(userRegister)) {
-				this.$state.go('products');
+				this.$state.go(Constants.PRODUCTS_URL);
 			}
 		} else {
 			this.errorRegister = "Ce nom est déjà utilisé, try again !"
@@ -20,7 +22,7 @@ export default class AuthController {
 	submitLogin() {
 		let userLogged = this.authService.logIn(this.formData.username);
 		if (userLogged) {
-			this.$state.go('products');
+			this.$state.go(Constants.PRODUCTS_URL);
 		} else {
 			this.errorLogin = "Trompé de nom d'utilisateur ?"
 		}
