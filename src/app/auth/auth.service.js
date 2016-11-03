@@ -1,6 +1,6 @@
 export default class AuthService {
   constructor() {
-    this.currentUser = "Bob";
+    this.currentUser = null;
     this.users = require('../json/users.json');
   }
 
